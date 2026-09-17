@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Logs
+logs/
+*.log
+airflow/logs/
+target/
+dbt_packages/
+
+# Airflow local files
+airflow/airflow.cfg
+airflow/standalone_admin_password.txt
+
+# dbt generated files
+zomato/target/
+zomato/logs/
+
+# dbt credentials
+zomato/profiles.yml
+
+# AI generated artifacts
+ai/review_embeddings.parquet
+ai/*_report.txt
+ai/rag_cache_audit.txt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
