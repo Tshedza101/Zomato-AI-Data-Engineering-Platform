@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fact_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: ['Delivered', 'Cancelled', 'Refunded', 'Placed', 'In Transit'] # Add all valid statuses present in raw data
